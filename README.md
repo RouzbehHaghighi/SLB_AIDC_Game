@@ -1,8 +1,9 @@
-# Complementary Material
+# SLB_AIDC_Game
+
+This repository provides supplementary materials and reproducible resources for the paper:
 
 **A Stackelberg–Nash Framework for Second-Life Battery Investment under AI Data-Center Load Growth and Carbon Policy**
 
----
 
 ## Authors
 
@@ -12,6 +13,12 @@ Department of Electrical and Computer Engineering, University of Michigan–Dear
 † Co-first authors (equal contribution)  
 \* Corresponding author: Wencong Su
 
-> **Paper link:** *To be added upon acceptance.*
+**Paper link:** (to be added)
 
----
+## Description
+
+This repository includes mathematical formulations, tables, and figures discussed in the paper. It aims to provide additional resources and data to support the research findings and facilitate further studies.
+
+## Contents
+
+### I. 
