@@ -48,7 +48,7 @@ $$
 + \sum_k (c^k + \tau_t \varepsilon_k) E^k_t
 + \sum_k O^k \bar K^k_t
 + \sum_{r \in \mathcal{R}} \big({-}\sigma^{\mathrm{re}}_t \mathrm{CRF}_r I^r \bar K^r_t\big)
-+ \sum_s \big(C^{\mathrm{Inv}}_{s,t} + C^{\mathrm{Gen}}_{s,t} + C^{\mathrm{O\&M}}_{s,t}\big)
++ \sum_s \big(C^{\mathrm{Inv}}_{s,t} + C^{\mathrm{Gen}}_{s,t} + C^{\mathrm{OM}}_{s,t}\big)
 + \sum_s \big({-}\sigma^s_t \bar P^s_t\big)
 + \sum_k \big({-}\rho_k \mathrm{CU}^k x^k_{t-L_k}\big)
 + \mathrm{VOLL} \sum_h w_h \mathrm{ns}_{t,h}
@@ -73,8 +73,14 @@ $$
 
 #### Notes
 
-$H$ is hours per year; $\eta^s_c, \eta^s_d$ are charge/discharge efficiencies; $\overline{\mathrm{FS}}_t$ is the annual SLB feedstock cap. Lifetimes $L_k = \min(L^{\mathrm{cal}}_k, L^{\mathrm{cyc}}_k)$ enter through the EOL window **milp-eol** (set to $L_k = L^{\mathrm{cal}}_k$ here, with aggregate $\mathrm{SoH}$; the cycle-life leg is a refinement), so a unit built in year $\tau$ leaves $\bar K^k_t$ after $L_k$ years. Capex is annualized by $\mathrm{CRF}_k$ over $L_k$; a salvage credit $\rho_k \mathrm{CU}^k x^k_{t-L_k}$ is taken on capacity retiring in year $t$ (zero when $t - L_k < 1$); the $\mathrm{SoH}$ floor $\underline{\mathrm{SoH}}_s$ enforces retirement. Replacement is **endogenous**: if **milp-adq** still binds after a cohort reaches EOL, the program rebuilds.
+$H$ is hours per year; $\eta^s_c, \eta^s_d$ are charge/discharge efficiencies; $\overline{\mathrm{FS}}_t$ is the annual SLB feedstock cap. Lifetimes $L_k = \min(L^{\mathrm{cal}}_k, L^{\mathrm{cyc}}_k)$ enter through the EOL window **milp-eol** (set to $L_k = L^{\mathrm{cal}}_k$ here, with aggregate $\mathrm{SoH}$; the cycle-life leg is a refinement), so a unit built in year $\tau$ leaves $\bar K^k_t$ after $L_k$ years. Capex is annualized by $\mathrm{CRF}_k$ over $L_k$; a salvage credit $\rho_k \mathrm{CU}^k x^k_{t-L_k}$ is taken on capacity retiring in year $t$ (zero when $t - L_k \lt 1$); the $\mathrm{SoH}$ floor $\underline{\mathrm{SoH}}_s$ enforces retirement. Replacement is **endogenous**: if **milp-adq** still binds after a cohort reaches EOL, the program rebuilds.
 
-Storage state-of-charge **milp-soc** cycles within each representative block in the planner; representative-period clearing and the game instead use a reduced dispatch with an annual discharge (net-energy) budget $\sum_h w_h \mathrm{dis}^s_{t,h} \le \mathrm{SoH}^s_t \bar P^s_t d_s$ (duration $d_s$) in place of the SoC recursion. The cost terms $C^{\mathrm{Inv}}, C^{\mathrm{Gen}}, C^{\mathrm{O\&M}}$ apply over live pre-EOL capacity. **milp-bal** and **milp-adq** carry the duals $\lambda$ and $\pi$ that price energy and capacity; in the market and game layer, $\pi$ follows the CONE curve rather than the planner adequacy shadow price.
+Storage state-of-charge **milp-soc** cycles within each representative block in the planner; representative-period clearing and the game instead use a reduced dispatch with an annual discharge (net-energy) budget in place of the SoC recursion:
+
+$$
+\sum_h w_h \mathrm{dis}^s_{t,h} \le \mathrm{SoH}^s_t \bar P^s_t d_s
+$$
+
+where $d_s$ is storage duration. The cost terms $C^{\mathrm{Inv}}_{s,t}$, $C^{\mathrm{Gen}}_{s,t}$, and $C^{\mathrm{OM}}_{s,t}$ (investment, generation, and O&amp;M) apply over live pre-EOL capacity. **milp-bal** and **milp-adq** carry the duals $\lambda$ and $\pi$ that price energy and capacity; in the market and game layer, $\pi$ follows the CONE curve rather than the planner adequacy shadow price.
 
 The program is linear with integer build variables and is solved with **Gurobi** (HiGHS fallback). The game-layer best response is the continuous-build, year-by-year relaxation of the equilibrium model; BNE diagonalization calls it once per player per iteration.
