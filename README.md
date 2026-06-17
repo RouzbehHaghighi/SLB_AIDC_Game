@@ -43,16 +43,7 @@ Each player's best response and the greenfield planner benchmark are **mixed-int
 **Eq. milp-obj**
 
 $$
-\min \sum_t \delta_t \Big[
-\sum_k \mathrm{CRF}_k I^k \bar K^k_t
-+ \sum_k (c^k + \tau_t \varepsilon_k) E^k_t
-+ \sum_k O^k \bar K^k_t
-+ \sum_{r \in \mathcal{R}} \big({-}\sigma^{\mathrm{re}}_t \mathrm{CRF}_r I^r \bar K^r_t\big)
-+ \sum_s \big(C^{\mathrm{Inv}}_{s,t} + C^{\mathrm{Gen}}_{s,t} + C^{\mathrm{OM}}_{s,t}\big)
-+ \sum_s \big({-}\sigma^s_t \bar P^s_t\big)
-+ \sum_k \big({-}\rho_k \mathrm{CU}^k x^k_{t-L_k}\big)
-+ \mathrm{VOLL} \sum_h w_h \mathrm{ns}_{t,h}
-\Big]
+\min \sum_t \delta_t \Big[ \sum_k \mathrm{CRF}_k I^k \bar K^k_t + \sum_k (c^k + \tau_t \varepsilon_k) E^k_t + \sum_k O^k \bar K^k_t + \sum_{r \in \mathcal{R}} \big({-}\sigma^{\mathrm{re}}_t \mathrm{CRF}_r I^r \bar K^r_t\big) + \sum_s \big(C^{\mathrm{Inv}}_{s,t} + C^{\mathrm{Gen}}_{s,t} + C^{\mathrm{OM}}_{s,t}\big) + \sum_s \big({-}\sigma^s_t \bar P^s_t\big) + \sum_k \big({-}\rho_k \mathrm{CU}^k x^k_{t-L_k}\big) + \mathrm{VOLL} \sum_h w_h \mathrm{ns}_{t,h} \Big]
 $$
 
 #### Subject to (for all $t,h$)
@@ -69,7 +60,7 @@ $$
 | milp-soh | $\mathrm{SoH}^s_t = \mathrm{SoH}^s_0 - \alpha^s \sum_{t' \le t} \sum_h w_h (\mathrm{ch}^s_{t',h} + \mathrm{dis}^s_{t',h})$ | — |
 | milp-cap | $\sum_h w_h \sum_{k \in \mathcal{G}^f} \varepsilon_k P^k_{t,h} \le \Gamma_t$ | — |
 | milp-eol | $\bar K^k_t = \mathrm{CU}^k \sum_{\tau=\max(1,\,t-L_k+1)}^{t} x^k_\tau$; $\mathrm{SoH}^s_t \ge \underline{\mathrm{SoH}}_s$ | — |
-| milp-int | $\bar P^{\mathrm{SLB}}_t \le \overline{\mathrm{FS}}_t$; $0 \le x^k_t \le \bar x^k$; $x^k_t \in \mathbb{Z}_{\ge 0}$ | — |
+| milp-int | $\bar P^{\mathrm{SLB}}_t \le \overline{\mathrm{FS}}_t;\; 0 \le x^k_t \le \bar x^k;\; x^k_t \in \mathbb{Z}_{\ge 0}$ | — |
 
 #### Notes
 
