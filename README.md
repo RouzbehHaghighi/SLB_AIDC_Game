@@ -51,25 +51,13 @@ Each player's best response and the greenfield planner benchmark are **mixed-int
 ### Objective (planner — minimize total cost)
 
 **Eq. milp-obj**
-
-$$
-\begin{aligned}
-\min \sum_{t} \delta_t \Big[\;
-&\sum_{k \notin \mathcal{R}} \mathrm{CRF}_k I^k \bar K^k_t
-+ \sum_{r \in \mathcal{R}} (1-\sigma^{\mathrm{re}}_t)\,\mathrm{CRF}_r I^r \bar K^r_t \\
-&+ \sum_{k} (c^k + \tau_t \varepsilon_k) E^k_t
-+ \sum_{k} O^k \bar K^k_t \\
-&+ \sum_{s} \Big[(1-\sigma^{\mathrm{sl}}_t \mathbb{1}_{s=\mathrm{SLB}})\,C^{\mathrm{Inv}}_{s,t} + C^{\mathrm{Gen}}_{s,t} + C^{\mathrm{OM}}_{s,t}\Big] \\
-&- \sum_{k} \rho_k\, \mathrm{CU}^k x^k_{t-L_k}
-- \sum_{k} \mathrm{RV}^k_t\, \mathrm{CU}^k x^k_t
-+ \mathrm{VOLL} \sum_{h} w_h\, \mathrm{ns}_{t,h}
-\;\Big]
-\end{aligned}
-$$
+<img width="1804" height="440" alt="image" src="https://github.com/user-attachments/assets/e2aed891-ad78-4dbb-9798-09a5b9db5c2e" />
 
 Subsidies are applied as multiplicative capex reductions, `(1-σ)`, matching the follower payoffs (generator/renewable/storage equations in the paper) rather than as separate additive credits — this keeps the planner objective and the equilibrium payoffs consistent. $\mathrm{RV}^k_t$ is a per-year residual-value credit on live (not-yet-retired) capacity, additional to the one-time salvage credit $\rho_k$ taken at retirement.
 
 ### Subject to (for all $t,h$)
+<img width="1410" height="1116" alt="image" src="https://github.com/user-attachments/assets/ad770f57-8dee-47f3-8930-09742da67643" />
+
 
 | Eq. | Constraint | Dual |
 |-----|------------|------|
