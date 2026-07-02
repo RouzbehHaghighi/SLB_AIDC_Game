@@ -93,29 +93,10 @@ The program is linear with integer build variables and is solved with **Gurobi**
 ## II. Representative Periods and Capacity Factors
 
 **Table.** Representative operating periods ($\sum_h w_h = 8\times1095 = 8760$ h).
-
-| Period $h$ | Weight $w_h$ (h) | Load fraction | Notes |
-|:---:|:---:|:---:|:---|
-| 1 | 1095 | 0.55 | |
-| 2 | 1095 | 0.65 | |
-| 3 | 1095 | 0.75 | |
-| 4 | 1095 | 0.85 | |
-| 5 | 1095 | 0.95 | peak block |
-| 6 | 1095 | 1.00 | peak block |
-| 7 | 1095 | 0.90 | |
-| 8 | 1095 | 0.70 | |
+<img width="1358" height="528" alt="image" src="https://github.com/user-attachments/assets/a926bfe7-4f2d-48e1-b62d-907758beb2be" />
 
 **Table.** Period-specific dispatch capacity factors $\gamma^m_{t,h}$ (multiplier on live capacity). NGCC, NGCT, and CCHP are fully dispatchable; biomass and nuclear are held at their fixed capacity factor across all periods.
-
-| Technology | $h{=}1$ | $h{=}2$ | $h{=}3$ | $h{=}4$ | $h{=}5$ | $h{=}6$ | $h{=}7$ | $h{=}8$ |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Wind    | 0.40 | 0.38 | 0.35 | 0.30 | 0.28 | 0.25 | 0.30 | 0.38 |
-| Solar   | 0.00 | 0.05 | 0.25 | 0.45 | 0.45 | 0.35 | 0.14 | 0.00 |
-| Biomass | 0.70 | 0.70 | 0.70 | 0.70 | 0.70 | 0.70 | 0.70 | 0.70 |
-| Nuclear | 0.92 | 0.92 | 0.92 | 0.92 | 0.92 | 0.92 | 0.92 | 0.92 |
-| NGCC    | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
-| NGCT    | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
-| CCHP    | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+<img width="1358" height="473" alt="image" src="https://github.com/user-attachments/assets/0c557d53-9a36-4511-a897-63b1a81a7c6a" />
 
 ---
 
