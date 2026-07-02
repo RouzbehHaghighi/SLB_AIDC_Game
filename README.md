@@ -193,19 +193,6 @@ A non-negative eigenvalue flags a flat-price corner (Section 4); the routine the
 
 Empirical convergence from many randomized starts is the most persuasive evidence for reviewers, and it agrees with the analytic DSC check on the sloped segment.
 
-### 6. Reproduction
-
-| Item | Where |
-|---|---|
-| Equilibrium loop (damped diagonalization, Algorithm 1) | `S04_Game_BNE.py` (Step 08) |
-| Damping / tolerance | `data.bne.damping`, `data.bne.tolerance_mw` |
-| DSC eigenvalue check | `verify_dsc` in `S04_Game_BNE.py` |
-| Multi-start restarts | `verify_uniqueness_restarts` in `S04_Game_BNE.py` |
-| Finite-difference step | $\delta = 50$ MW (central) |
-| Restart count / draw | $N=50$, $\mathcal{U}(0,2)\times x^{\mathrm{planner}}$ |
-
-Both routines are called on the converged-equilibrium object returned by the Step-08 loop; the eigenvalue spectrum and multi-start deviations reported in the paper (S6 and S7 at 2035 and 2045) are their output.
-
 ---
 
 ## Reference
