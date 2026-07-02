@@ -103,14 +103,7 @@ The program is linear with integer build variables and is solved with **Gurobi**
 
 The paper's reported scenarios (S1–S9) fix the policy vector $\boldsymbol{\theta}=(\tau,\sigma^{\mathrm{re}},\sigma^{\mathrm{sl}})$ at nine representative points. More generally, the leader's problem is to choose $\boldsymbol{\theta}$ to minimize expected social cost plus carbon damage at the induced equilibrium $\mathcal{E}(\boldsymbol{\theta})$:
 
-$$
-\begin{aligned}
-\min_{\boldsymbol{\theta}\ge 0}\;\; & \mathrm{TSC}(\boldsymbol{\theta})
- + \mathrm{scc}\cdot\mathrm{CO_2}(\boldsymbol{\theta})
- + \mu\sum_t\sigma^{\mathrm{sl}}_t\bar P^{\mathrm{sl}}_t \\
-\text{s.t.}\;\; & (\cdot)\in\mathcal{E}(\boldsymbol{\theta})
-\end{aligned}
-$$
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/18086de2-41df-4e59-b401-acef9d2b360a" />
 
 where $\mathrm{scc}$ is the social cost of carbon and $\mu$ a subsidy-budget weight. Emissions are internalized through $\tau_t$ in the followers' payoffs and $\mathrm{scc}\cdot\mathrm{CO_2}$ in the leader's objective, rather than through a hard cap. The objective is two-dimensional (cost and emissions), so sweeping this leader problem over $\boldsymbol{\theta}$ traces a cost–emissions frontier; the nine scenarios reported in the paper are representative points on that surface, not an exhaustive sweep.
 
