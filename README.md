@@ -56,7 +56,7 @@ Each player's best response and the greenfield planner benchmark are **mixed-int
 Subsidies are applied as multiplicative capex reductions, `(1-σ)`, matching the follower payoffs (generator/renewable/storage equations in the paper) rather than as separate additive credits — this keeps the planner objective and the equilibrium payoffs consistent. $\mathrm{RV}^k_t$ is a per-year residual-value credit on live (not-yet-retired) capacity, additional to the one-time salvage credit $\rho_k$ taken at retirement.
 
 ### Subject to (for all $t,h$)
-<img width="1410" height="1116" alt="image" src="https://github.com/user-attachments/assets/ad770f57-8dee-47f3-8930-09742da67643" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/ad770f57-8dee-47f3-8930-09742da67643" />
 
 
 | Eq. | Constraint | Dual |
@@ -93,10 +93,10 @@ The program is linear with integer build variables and is solved with **Gurobi**
 ## II. Representative Periods and Capacity Factors
 
 **Table.** Representative operating periods ($\sum_h w_h = 8\times1095 = 8760$ h).
-<img width="1358" height="528" alt="image" src="https://github.com/user-attachments/assets/a926bfe7-4f2d-48e1-b62d-907758beb2be" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/a926bfe7-4f2d-48e1-b62d-907758beb2be" />
 
 **Table.** Period-specific dispatch capacity factors $\gamma^m_{t,h}$ (multiplier on live capacity). NGCC, NGCT, and CCHP are fully dispatchable; biomass and nuclear are held at their fixed capacity factor across all periods.
-<img width="1358" height="473" alt="image" src="https://github.com/user-attachments/assets/0c557d53-9a36-4511-a897-63b1a81a7c6a" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/0c557d53-9a36-4511-a897-63b1a81a7c6a" />
 
 ---
 
