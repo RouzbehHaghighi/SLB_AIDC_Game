@@ -146,8 +146,15 @@ $$
 **Proposition (conditional uniqueness).** If the symmetric part of the pseudo-gradient Jacobian is negative definite at the candidate equilibrium $x^*$,
 
 $$
-\tfrac{1}{2}\big(G(x^*)+G(x^*)^{\top}\big)\;\prec\;0,
-$$
+\frac{1}{2}
+\left[
+\mathbf{G(\mathbf{x};\boldsymbol{\theta})
++
+\mathbf{G(\mathbf{x};\boldsymbol{\theta})^{\top}
+\right]
+\prec 0,
+\qquad
+\forall \mathbf{x}\in\mathcal{X},$$
 
 then the game satisfies Rosen's *diagonal strict concavity* condition and the Nash equilibrium is unique; the damped best-response iteration of the equilibrium loop converges to it.
 
