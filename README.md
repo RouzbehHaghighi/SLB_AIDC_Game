@@ -2,7 +2,7 @@
 
 This repository provides supplementary materials and reproducible resources for the paper:
 
-**A Stackelberg–Nash Framework for Second-Life Battery Investment under AI Data-Center Load Growth and Carbon Policy in MISO**
+**A Stackelberg–Bayesian Capacity-Market Game of Carbon Regulation and Second-Life Battery Investment under AI Data-Center Load Growth**
 
 Submitted to the North American Power Symposium (NAPS) 2026.
 
