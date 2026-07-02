@@ -24,9 +24,8 @@ This repository includes the full mathematical formulation, parameter tables, an
 
 - [I. MILP Formulation](#i-milp-formulation)
 - [II. Representative Periods and Capacity Factors](#ii-representative-periods-and-capacity-factors)
-- [III. Biomass Emission Factor](#iii-biomass-emission-factor)
-- [IV. Regulator (Leader) Problem](#iv-regulator-leader-problem)
-- [V. Equilibrium Existence and Uniqueness](#v-equilibrium-existence-and-uniqueness)
+- [III. Regulator (Leader) Problem](#iv-regulator-leader-problem)
+- [IV. Equilibrium Existence and Uniqueness](#v-equilibrium-existence-and-uniqueness)
 - [Reference](#reference)
 
 ---
@@ -100,13 +99,7 @@ The program is linear with integer build variables and is solved with **Gurobi**
 
 ---
 
-## III. Biomass Emission Factor
-
-The generation-technology parameter table in the paper lists biomass at $\varepsilon = 0.20$ tCO$_2$/MWh. Stack combustion for woody biomass is approximately 1.0 tCO$_2$/MWh; the modeled value applies an 80% biogenic offset (net accounting) — between the IPCC's zero-emission treatment of biomass and full stack counting (e.g., EU ETS for non-sustainable feedstocks). Biomass remains eligible for the renewable subsidy $\sigma^{\mathrm{re}}$ but, carrying $\varepsilon > 0$, still pays the carbon tax like any other emitting unit.
-
----
-
-## IV. Regulator (Leader) Problem
+## III. Regulator (Leader) Problem
 
 The paper's reported scenarios (S1–S9) fix the policy vector $\boldsymbol{\theta}=(\tau,\sigma^{\mathrm{re}},\sigma^{\mathrm{sl}})$ at nine representative points. More generally, the leader's problem is to choose $\boldsymbol{\theta}$ to minimize expected social cost plus carbon damage at the induced equilibrium $\mathcal{E}(\boldsymbol{\theta})$:
 
@@ -123,7 +116,7 @@ where $\mathrm{scc}$ is the social cost of carbon and $\mu$ a subsidy-budget wei
 
 ---
 
-## V. Equilibrium Existence and Uniqueness
+## IV. Equilibrium Existence and Uniqueness
 
 Companion material for *"A Stackelberg–Nash Framework for Second-Life Battery Investment under AI Data-Center Load Growth and Carbon Policy in MISO."* This note expands the uniqueness statement that appears in compressed form in the manuscript: it documents the argument and the two numerical checks that back it, so the paper itself can keep the two-sentence summary.
 
