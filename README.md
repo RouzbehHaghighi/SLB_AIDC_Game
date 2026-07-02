@@ -51,7 +51,7 @@ Each player's best response and the greenfield planner benchmark are **mixed-int
 ### Objective (planner — minimize total cost)
 
 **Eq. milp-obj**
-<img width="1804" height="440" alt="image" src="https://github.com/user-attachments/assets/e2aed891-ad78-4dbb-9798-09a5b9db5c2e" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/e2aed891-ad78-4dbb-9798-09a5b9db5c2e" />
 
 Subsidies are applied as multiplicative capex reductions, `(1-σ)`, matching the follower payoffs (generator/renewable/storage equations in the paper) rather than as separate additive credits — this keeps the planner objective and the equilibrium payoffs consistent. $\mathrm{RV}^k_t$ is a per-year residual-value credit on live (not-yet-retired) capacity, additional to the one-time salvage credit $\rho_k$ taken at retirement.
 
